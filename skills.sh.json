@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Codex Workflows",
+      "description": "Skills for Codex App coordination and managed thread workflows.",
+      "skills": [
+        "codex-managed-worktree-threads"
+      ]
+    }
+  ]
+}
