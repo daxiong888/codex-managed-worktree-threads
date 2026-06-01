@@ -10,10 +10,9 @@ This skill is intentionally explicit-only: invoke it as `$codex-managed-worktree
 
 OpenAI's Codex team showed the same core workflow: Codex can manage Codex threads, search and organize conversations, pin important ones, and spin up worktrees for parallel tasks.
 
-[![Codex self-managing threads demo](https://pbs.twimg.com/amplify_video_thumb/2060463985833791488/img/SUgTQZb30vz5emqA.jpg)](https://x.com/guinnesschen/status/2060464235868836235)
+[![Codex self-managing threads demo](assets/codex-self-managing-threads.gif)](https://x.com/guinnesschen/status/2060464235868836235)
 
 - Promo post: [Guinness Chen on X](https://x.com/guinnesschen/status/2060464235868836235)
-- Demo video: [MP4](https://video-s.twimg.com/amplify_video/2060463985833791488/vid/avc1/1600x1080/vaEPOsjOSxHd7NjH.mp4?tag=27)
 
 ## Install
 
