@@ -1,6 +1,6 @@
 interface:
   display_name: "Codex Managed Worktree Threads"
   short_description: "Explicit-only Codex App worktree threads"
-  default_prompt: "Use explicit-only $codex-managed-worktree-threads to run one Codex App background thread per task with Codex-managed worktrees."
+  default_prompt: "Use explicit-only $codex-managed-worktree-threads to route write issues into Codex App managed worktree threads, keep read-only tasks out of worktree creation, and place Goal Mode only in child-thread prompts."
 policy:
   allow_implicit_invocation: false
