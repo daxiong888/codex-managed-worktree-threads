@@ -16,6 +16,24 @@ Do not replace that with:
 
 Those workflows can be useful in their own tools, but they do not provide the same Codex App thread, diff, review, and lifecycle surface.
 
+## Why read-only work should not create worktrees
+
+Codex-managed worktrees are valuable when a child thread may edit files and produce a diff. Read-only scenarios such as multi-perspective review, architecture critique, PRD review, scoring, issue triage, or planning-only work do not need an isolated filesystem. Creating worktrees for those tasks adds lifecycle and reconciliation overhead without producing a mergeable artifact.
+
+When a task has both read-only investigation and possible implementation, split it first. Run the read-only part as review/planning, then create a Codex-managed worktree thread only for the concrete write task that remains.
+
+## Why Goal Mode belongs only in child prompts
+
+Groundwork `to-issues` output makes each issue a natural candidate goal, but the coordinator thread is not the implementation worker. The coordinator should route, monitor, review, and sequence results. Goal Mode directives therefore belong inside the child-thread prompt for the specific issue, not in the current/main conversation.
+
+This reduces the chance that the user says "use goal mode" and the coordinator starts executing the goal itself instead of launching the intended child thread.
+
+## Why execution profiles are per task
+
+Different issues benefit from different tradeoffs. Small localized edits are usually better routed to faster/lower-cost profiles, while cross-cutting changes, migrations, security-sensitive edits, and clean reviews benefit from stronger reasoning. The skill records model profile, reasoning effort, cost/latency bias, and routing reason per task so the orchestration can optimize cost, speed, and quality instead of using one fixed profile for every child thread.
+
+If the thread tools expose model or reasoning selectors, use them. If they do not, keep the execution profile as an explicit prompt-level preference and report that it was not tool-enforced.
+
 ## Reference Signals
 
 These are contrast and community signals, not authoritative runtime contracts. The hard boundary comes from the requested Codex App managed-thread workflow, current thread-tool availability, and the requirement that the Codex App manages the background thread worktrees.
